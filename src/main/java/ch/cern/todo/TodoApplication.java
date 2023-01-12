@@ -16,10 +16,4 @@ public class TodoApplication {
 	public void printAfterStartup() {
 		System.out.println("TodoApplication started");
 	}
-
-//	my to do list:
-	//tests - czy to z javy mam odpytywać tamto api i sprawdzać co się tam dzieje?
-	//add second db table - próba 2
-
-
 }
