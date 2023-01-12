@@ -20,34 +20,6 @@ public class TasksController {
     @Autowired
     TasksRepository tasksRepository;
 
-    @GetMapping("/tasks")
-    public ResponseEntity<List<Tasks>> getAllTasks(@RequestParam(required = false) String task_name) {
-        try {
-            List<Tasks> tasks = new ArrayList<Tasks>();
-
-            tasksRepository.findAll().forEach(tasks::add);
-
-            if (tasks.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            }
-
-            return new ResponseEntity<>(tasks, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @GetMapping("/tasks/{id}")
-    public ResponseEntity<Tasks> getTaskById(@PathVariable("id") long task_id) {
-        Optional<Tasks> tasksData = tasksRepository.findById(task_id);
-
-        if (tasksData.isPresent()) {
-            return new ResponseEntity<>(tasksData.get(), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
-
     @PostMapping("/tasks")
     public ResponseEntity<Tasks> createTask(@RequestBody Tasks tasks) {
         try {
