@@ -14,6 +14,8 @@ Once you are ready, please send it to me (ie link to your git repository) before
 
 This is a GitHub repository with my solution proposal. Solution includes creating tables `tasks` and `task_categories` in DB and possibility to create tasks via REST API. However, tasks that can be created, do not contain information about categories. The start of the application can be tested with the use of tests, that are in directory `\src\test` and creation of new tasks can be created by sending API request via eg. Postman and running SQL queries in H2 Console.
 
+Author: Agata Kaczmarek
+
 ## Tests of the solution
 
 Below can be found the results of the tests.
