@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Tasks {
 
     @Id //this is a primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //id will increase automatically
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long task_id;
 
     @Column(columnDefinition="VARCHAR2(100)", nullable = false, name = "task_name")
