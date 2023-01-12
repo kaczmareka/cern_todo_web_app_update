@@ -4,12 +4,12 @@ import javax.persistence.*;
 
 //responsible for creating and maintaining table task_categories
 
-@Entity  //this class is persistent Java class
+@Entity
 @Table(name = "task_categories", indexes=@Index(columnList = "category_id, category_name"))
 public class TaskCategories {
 
     @Id //this is a primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //id will increase automatically
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long category_id;
 
     @Column(columnDefinition="VARCHAR2(100)",unique=true, nullable = false, name = "category_name")
